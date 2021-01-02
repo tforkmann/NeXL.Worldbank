@@ -1,17 +1,13 @@
 ﻿namespace NeXL.Worldbank
-open System
 open NeXL.ManagedXll
 open System.Runtime.InteropServices
-open System.Windows.Forms
-open System.Drawing
-open System.Reflection
 open NeXL.XlInterop
 
 [<ComVisible(true)>]
 [<XlInvisibleAttribute>]
 type ControlRibbon() =
     inherit XlRibbon()
-
+   
     let mutable ribbon = null
 
     override this.GetCustomUI(ribbonID : string) =

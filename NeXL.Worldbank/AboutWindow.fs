@@ -8,7 +8,7 @@ open System.Threading
 open System.Collections.Generic
 open System.Windows.Documents
 open System.Windows.Navigation
-open System.Windows.Media.Imaging
+open System.Windows.Media.Imaging  
 open System.Reflection
 open NeXL.ManagedXll
 open StateManager

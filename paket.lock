@@ -1,15 +1,35 @@
-FRAMEWORK: NET35, NET40, NET45, NET452, NET46
+
+
+GROUP ExcelIntegration
+STORAGE: NONE
+RESTRICTION: == net50
 NUGET
   remote: https://api.nuget.org/v3/index.json
-    Deedle (1.2.5)
-    DocumentFormat.OpenXml (2.5)
-    FAKE (4.46.1)
-    FSharp.Core (4.1)
-      System.ValueTuple (>= 4.3)
-    FSharp.Data (2.3.2)
-    NetOffice.Core.Net45 (1.7.3)
-    NetOffice.Excel.Net45 (1.7.3)
-      NetOffice.Core.Net45 (>= 1.7.3)
-    Newtonsoft.Json (9.0.1)
+    Deedle (2.3)
+      FSharp.Core (>= 4.5.2)
+    DocumentFormat.OpenXml (2.12)
+      System.IO.Packaging (>= 4.7)
+    FSharp.Core (5.0)
+    FSharp.Data (3.3.3)
+      FSharp.Core (>= 4.3.4)
+    Microsoft.NETCore.Platforms (5.0)
+    Microsoft.Win32.SystemEvents (5.0)
+      Microsoft.NETCore.Platforms (>= 5.0)
+    NetOffice.Core.Net45 (1.7.4.11)
+    NetOffice.Excel.Net45 (1.7.4.11)
+      NetOffice.Core.Net45 (>= 1.7.4.11)
+    NETStandard.Library (2.0.3)
+      Microsoft.NETCore.Platforms (>= 1.1)
+    Newtonsoft.Json (12.0.3)
     NeXL (1.6)
-    System.ValueTuple (4.3)
+    System.Drawing.Common (5.0)
+      Microsoft.Win32.SystemEvents (>= 5.0)
+    System.IO.Packaging (5.0)
+    System.ValueTuple (4.5)
+    TaskBuilder.fs (2.1)
+      FSharp.Core (>= 4.1.17)
+      NETStandard.Library (>= 1.6.1)
+      System.ValueTuple (>= 4.4)
+    WindowsAzure.Storage (9.3.3)
+      NETStandard.Library (>= 1.6.1)
+      Newtonsoft.Json (>= 10.0.2)
