@@ -1,9 +1,10 @@
 group ExcelIntegration
     NeXL
     DocumentFormat.OpenXml
-    NetOffice.Core.Net45
-    NetOffice.Excel.Net45
+    NetOffice.Core
+    NetOffice.Excel
     FSharp.Data
     Newtonsoft.Json
     Deedle
     System.Drawing.Common
+    System.Drawing

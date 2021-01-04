@@ -1,14 +1,11 @@
 namespace NeXL.Worldbank
 open NeXL.ManagedXll
-open NeXL.XlInterop
 open System
-open Newtonsoft.Json
-open Newtonsoft.Json.Linq
 
 [<XlInvisible>]
 type IdKeyValue =
     {
-     Id : string
+     Id : string  
      Key : string
      Value : string
     }

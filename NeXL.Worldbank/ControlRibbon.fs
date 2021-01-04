@@ -1,12 +1,12 @@
 ﻿namespace NeXL.Worldbank
 open NeXL.ManagedXll
-open System.Runtime.InteropServices
-open NeXL.XlInterop
+open System.Runtime.InteropServices  
+open NeXL.XlInterop     
 
 [<ComVisible(true)>]
 [<XlInvisibleAttribute>]
-type ControlRibbon() =
-    inherit XlRibbon()
+type ControlRibbon() =  
+    inherit XlRibbon()     
    
     let mutable ribbon = null
 
@@ -45,12 +45,12 @@ type ControlRibbon() =
         if ribbon <> null then ribbon.Invalidate()
 
     member this.OnAboutButtonClick(control : IRibbonControl) =
-        let aboutWindow = AboutWindow.create()
+        let aboutWindow = AboutWindow.create()  
         aboutWindow.ShowDialog() |> ignore
 
     override this.GetBitmap(imageName) =
         use stream = Assembly.GetExecutingAssembly().GetManifestResourceStream(imageName + ".png")
-        Bitmap.FromStream(stream):?>Bitmap
+        Bitmap.FromStream(stream) :?>  Bitmap
         
 
 

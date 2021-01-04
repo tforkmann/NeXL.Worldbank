@@ -1,15 +1,16 @@
 group ExcelIntegration
   storage: none
   source https://api.nuget.org/v3/index.json
-  frameworks: net5.0
+  framework: net5.0-windows
   nuget NeXL
   nuget FSharp.Core
   nuget TaskBuilder.fs
   nuget WindowsAzure.Storage
   nuget FSharp.Data
-  nuget NetOffice.Core.Net45
-  nuget NetOffice.Excel.Net45
+  nuget NetOffice.Core
+  nuget NetOffice.Excel
   nuget DocumentFormat.OpenXml
   nuget Newtonsoft.Json
   nuget Deedle
   nuget System.Drawing.Common
+  nuget System.Drawing

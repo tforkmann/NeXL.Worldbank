@@ -1,16 +1,12 @@
 namespace NeXL.Worldbank
 open NeXL.ManagedXll
-open NeXL.XlInterop
 open System
-open System.IO
-open System.Runtime.InteropServices
 open System.Data
 open FSharp.Data
-open Newtonsoft.Json
-open Newtonsoft.Json.Linq
+open Newtonsoft.Json  
 open Deedle
 
-[<XlQualifiedName(true)>]
+[<XlQualifiedName(true)>]    
 module Worldbank =
 
     let private frameToDataTable (frame : Frame<'T, string>) : DataTable =
@@ -125,19 +121,19 @@ module Worldbank =
                         let err = body.Descendants ["p"] 
                                     |> Seq.map (fun v -> v.InnerText())
                                     |>  String.concat "."
-                        raise (new ArgumentException(err))
+                        raise (ArgumentException(err))
                         return XlTable.Empty
                     else
                         let json = JsonValue.Parse(json).AsArray()
                         if json.Length = 1 then
                             let err = JsonConvert.DeserializeObject<ErrorMessage>(json.[0].ToString())
-                            raise (new ArgumentException(err.Message.[0].Key))
+                            raise (ArgumentException(err.Message.[0].Key))
                             return XlTable.Empty
                         else
                             let countries = JsonConvert.DeserializeObject<CountryResponse[]>(json.[1].ToString()) |> Array.map toCountry
                             return XlTable.Create(countries, String.Empty, String.Empty, false, transposed, headers)
                 | Binary(_) -> 
-                    raise (new ArgumentException("Binary response received, json expected"))
+                    raise (ArgumentException("Binary response received, json expected"))
                     return XlTable.Empty
              }
 
@@ -169,19 +165,19 @@ module Worldbank =
                         let err = body.Descendants ["p"] 
                                     |> Seq.map (fun v -> v.InnerText())
                                     |>  String.concat "."
-                        raise (new ArgumentException(err))
+                        raise (ArgumentException(err))
                         return XlTable.Empty
                     else
                         let json = JsonValue.Parse(json).AsArray()
                         if json.Length = 1 then
                             let err = JsonConvert.DeserializeObject<ErrorMessage>(json.[0].ToString())
-                            raise (new ArgumentException(err.Message.[0].Key))
+                            raise (ArgumentException(err.Message.[0].Key))
                             return XlTable.Empty
                         else
                             let incLevels = JsonConvert.DeserializeObject<IdValue[]>(json.[1].ToString()) |> Array.map toIncomeLevel
                             return XlTable.Create(incLevels, String.Empty, String.Empty, false, transposed, headers)
                 | Binary(_) -> 
-                    raise (new ArgumentException("Binary response received, json expected"))
+                    raise (ArgumentException("Binary response received, json expected"))
                     return XlTable.Empty
              }
 
@@ -213,19 +209,19 @@ module Worldbank =
                         let err = body.Descendants ["p"] 
                                     |> Seq.map (fun v -> v.InnerText())
                                     |>  String.concat "."
-                        raise (new ArgumentException(err))
+                        raise (ArgumentException(err))
                         return XlTable.Empty
                     else
                         let json = JsonValue.Parse(json).AsArray()
                         if json.Length = 1 then
                             let err = JsonConvert.DeserializeObject<ErrorMessage>(json.[0].ToString())
-                            raise (new ArgumentException(err.Message.[0].Key))
+                            raise (ArgumentException(err.Message.[0].Key))
                             return XlTable.Empty
                         else
                             let lendTypes = JsonConvert.DeserializeObject<IdValue[]>(json.[1].ToString()) |> Array.map toLendingType
                             return XlTable.Create(lendTypes, String.Empty, String.Empty, false, transposed, headers)
                 | Binary(_) -> 
-                    raise (new ArgumentException("Binary response received, json expected"))
+                    raise (ArgumentException("Binary response received, json expected"))
                     return XlTable.Empty
              }
 
@@ -263,19 +259,19 @@ module Worldbank =
                         let err = body.Descendants ["p"] 
                                     |> Seq.map (fun v -> v.InnerText())
                                     |>  String.concat "."
-                        raise (new ArgumentException(err))
+                        raise (ArgumentException(err))
                         return XlTable.Empty
                     else
                         let json = JsonValue.Parse(json).AsArray()
                         if json.Length = 1 then
                             let err = JsonConvert.DeserializeObject<ErrorMessage>(json.[0].ToString())
-                            raise (new ArgumentException(err.Message.[0].Key))
+                            raise (ArgumentException(err.Message.[0].Key))
                             return XlTable.Empty
                         else
                             let indicators = JsonConvert.DeserializeObject<IndicatorResponse[]>(json.[1].ToString()) |> Array.map toIndicator
                             return XlTable.Create(indicators, String.Empty, String.Empty, false, transposed, headers)
                 | Binary(_) -> 
-                    raise (new ArgumentException("Binary response received, json expected"))
+                    raise (ArgumentException("Binary response received, json expected"))
                     return XlTable.Empty
              }
 
@@ -318,13 +314,13 @@ module Worldbank =
                         let err = body.Descendants ["p"] 
                                     |> Seq.map (fun v -> v.InnerText())
                                     |>  String.concat "."
-                        raise (new ArgumentException(err))
+                        raise (ArgumentException(err))
                         return XlTable.Empty
                     else
                         let json = JsonValue.Parse(json).AsArray()
                         if json.Length = 1 then
                             let err = JsonConvert.DeserializeObject<ErrorMessage>(json.[0].ToString())
-                            raise (new ArgumentException(err.Message.[0].Key))
+                            raise (ArgumentException(err.Message.[0].Key))
                             return XlTable.Empty
                         else
                             let indicatorData = JsonConvert.DeserializeObject<IndicatorData[]>(json.[1].ToString()) 
@@ -333,7 +329,7 @@ module Worldbank =
                                                     |> frameToDataTable
                             return XlTable(indicatorData, String.Empty, String.Empty, false, transposed, headers)
                 | Binary(_) -> 
-                    raise (new ArgumentException("Binary response received, json expected"))
+                    raise (ArgumentException("Binary response received, json expected"))
                     return XlTable.Empty
              }
 

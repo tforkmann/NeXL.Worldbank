@@ -3,6 +3,5 @@ open NeXL.ManagedXll
 
 module CustomizationProviders =
 
-    [<XlWorkbookTypesProvider>]
+    [<XlWorkbookTypesProvider>]  
     let getWorkbookTypes(workbook : obj) = [|typeof<ControlRibbon>|]
-  
