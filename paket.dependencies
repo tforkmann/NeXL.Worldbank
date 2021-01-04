@@ -3,13 +3,12 @@ group ExcelIntegration
   source https://api.nuget.org/v3/index.json
   framework: net5.0-windows
   nuget NeXL
-  nuget FSharp.Core
+  nuget FSharp.Core == 5.0.0
   nuget TaskBuilder.fs
   nuget WindowsAzure.Storage
   nuget FSharp.Data
-  nuget NetOffice.Core
-  nuget NetOffice.Excel
+  nuget EPPlus
   nuget DocumentFormat.OpenXml
   nuget Newtonsoft.Json
   nuget Deedle
-  nuget System.Drawing.Common
+  nuget System.Drawing.Common == 5.0.0

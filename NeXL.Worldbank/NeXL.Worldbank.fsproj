@@ -11,7 +11,7 @@
     <Compile Include="UDFs.fs" />
     <Compile Include="AboutWindow.fs" />
     <Compile Include="ControlRibbon.fs" />
-    <Compile Include="CustProviders.fs" />
+    <!-- <Compile Include="CustProviders.fs" /> -->
   </ItemGroup>
   <Import Project="..\.paket\Paket.Restore.targets" />
 </Project>

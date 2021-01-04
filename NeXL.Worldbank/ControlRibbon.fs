@@ -29,28 +29,28 @@ type ControlRibbon() =
     override this.OnLoad(ribbonUI : IRibbonUI) =
         ribbon <- ribbonUI
 
-    member this.getInstallEnabled(control : IRibbonControl ) =
-        ExcelCustomization.CustomizationIsInstalled() |> not
+    // member this.getInstallEnabled(control : IRibbonControl ) =
+    //     ExcelCustomization.CustomizationIsInstalled() |> not   
 
-    member this.getDeleteEnabled(control : IRibbonControl ) =
-        ExcelCustomization.CustomizationIsInstalled()
+    // member this.getDeleteEnabled(control : IRibbonControl ) =
+    //     ExcelCustomization.CustomizationIsInstalled()
 
-    member this.OnActivateButtonClick(control : IRibbonControl) =
-        ExcelCustomization.DeleteCustomization()
-        ExcelCustomization.Install()
-        if ribbon <> null then ribbon.Invalidate()
+    // member this.OnActivateButtonClick(control : IRibbonControl) =
+    //     ExcelCustomization.DeleteCustomization()
+    //     ExcelCustomization.Install()
+    //     if ribbon <> null then ribbon.Invalidate()
 
-    member this.OnDeleteButtonClick(control : IRibbonControl) =
-        ExcelCustomization.DeleteCustomization()
-        if ribbon <> null then ribbon.Invalidate()
+    // member this.OnDeleteButtonClick(control : IRibbonControl) =
+    //     ExcelCustomization.DeleteCustomization()
+    //     if ribbon <> null then ribbon.Invalidate()
 
-    member this.OnAboutButtonClick(control : IRibbonControl) =
-        let aboutWindow = AboutWindow.create()  
-        aboutWindow.ShowDialog() |> ignore
+    // member this.OnAboutButtonClick(control : IRibbonControl) =
+    //     let aboutWindow = AboutWindow.create()  
+    //     aboutWindow.ShowDialog() |> ignore
 
-    override this.GetBitmap(imageName) =
-        use stream = Assembly.GetExecutingAssembly().GetManifestResourceStream(imageName + ".png")
-        Bitmap.FromStream(stream) :?>  Bitmap
+    // override this.GetBitmap(imageName) =
+    //     use stream = Assembly.GetExecutingAssembly().GetManifestResourceStream(imageName + ".png")
+    //     Bitmap.FromStream(stream) :?>  Bitmap   
         
 
 

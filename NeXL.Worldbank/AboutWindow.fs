@@ -20,8 +20,6 @@ module AboutWindow =
         colDef.Width <- GridLength(length, unit)
         colDef
 
-    let private logo = EmbeddedResources.getBitmap "Logo.gif"  
-
     let create() =
         let window = Window()
         window.WindowStartupLocation <- WindowStartupLocation.CenterScreen
@@ -37,7 +35,7 @@ module AboutWindow =
 
         let image = Image()
         image.HorizontalAlignment <- HorizontalAlignment.Left
-        let bitmap = BitmapImage()
+        let bitmap = BitmapImage() 
         bitmap.BeginInit()
         use stream = Assembly.GetExecutingAssembly().GetManifestResourceStream("Logo.gif")
         bitmap.StreamSource <- stream
