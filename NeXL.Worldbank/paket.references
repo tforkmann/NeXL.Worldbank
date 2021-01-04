@@ -7,4 +7,3 @@ group ExcelIntegration
     Newtonsoft.Json
     Deedle
     System.Drawing.Common
-    System.Drawing

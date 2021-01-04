@@ -13,4 +13,3 @@ group ExcelIntegration
   nuget Newtonsoft.Json
   nuget Deedle
   nuget System.Drawing.Common
-  nuget System.Drawing
